@@ -1,0 +1,329 @@
+/* =================================================
+   POKE-NATURALES
+   ESTILOS DE LA PANTALLA DE INICIO
+   ================================================= */
+
+
+/* =================================================
+   CONFIGURACIÓN GENERAL
+   ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Toda la página */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #35134f;
+
+    color: white;
+
+}
+
+
+/* =================================================
+   PANTALLA DE INICIO
+   ================================================= */
+
+.inicio {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    /*
+    Fondo provisorio.
+    Cuando tengamos el fondo definitivo
+    del prototipo lo colocamos acá.
+    */
+
+    background:
+        linear-gradient(
+            rgba(50, 15, 70, 0.45),
+            rgba(50, 15, 70, 0.45)
+        );
+
+}
+
+
+/* =================================================
+   LOGO
+   ================================================= */
+
+.logo {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.logo h1 {
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    color: #fff36b;
+
+    line-height: 0.9;
+
+    letter-spacing: 2px;
+
+    /*
+    Sombra para darle un estilo
+    más parecido a un videojuego.
+    */
+
+    text-shadow:
+        3px 3px 0 #35134f,
+        5px 5px 0 #1e0a2d;
+
+}
+
+
+/* =================================================
+   NOMBRE DEL JUGADOR
+   ================================================= */
+
+.nombre-jugador {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.nombre-jugador label {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #fff36b;
+
+}
+
+
+.nombre-jugador input {
+
+    width: 300px;
+
+    height: 42px;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    outline: none;
+
+    text-align: center;
+
+    font-size: 16px;
+
+}
+
+
+/* =================================================
+   SELECCIÓN DE PERSONAJE
+   ================================================= */
+
+.seleccion-personaje {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.seleccion-personaje p {
+
+    color: #fff36b;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Contenedor de personajes */
+
+.personajes {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+}
+
+
+/* Botones de personajes */
+
+.personaje {
+
+    width: 42px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: white;
+
+    color: #35134f;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+/* Personaje seleccionado */
+
+.personaje.seleccionado {
+
+    background-color: #fff36b;
+
+    transform: scale(1.1);
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.personaje:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+/* =================================================
+   MENÚ PRINCIPAL
+   ================================================= */
+
+.menu {
+
+    width: 260px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+/* Botones principales */
+
+.boton {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 48px;
+
+    background-color: #35005d;
+
+    border: 2px solid #5b1c82;
+
+    border-radius: 25px;
+
+    color: #fff36b;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+
+}
+
+
+/* Efecto al pasar el mouse */
+
+.boton:hover {
+
+    background-color: #4d0878;
+
+    transform: scale(1.05);
+
+}
+
+
+/* =================================================
+   ADAPTACIÓN PARA CELULARES
+   ================================================= */
+
+@media (max-width: 600px) {
+
+    .logo h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .nombre-jugador input {
+
+        width: 250px;
+
+    }
+
+
+    .menu {
+
+        width: 230px;
+
+    }
+
+}
