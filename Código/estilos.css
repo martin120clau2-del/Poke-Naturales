@@ -1,329 +1,240 @@
-/* =================================================
-   POKE-NATURALES
-   ESTILOS DE LA PANTALLA DE INICIO
-   ================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+:root {
+  --morado-oscuro: #2a1a4a;
+  --morado-medio: #4a3178;
+  --morado-panel: #3d2a63;
+  --amarillo: #ffdf3c;
+  --amarillo-suave: #ffe873;
+  --blanco: #f5f0ff;
+  --borde-panel: #6b4fa0;
 
-/* =================================================
-   CONFIGURACIÓN GENERAL
-   ================================================= */
+  /* Cuando tengas el fondo exportado como PNG/JPG desde fondos.pdf,
+     reemplazá esta ruta y descomentá la línea en .pantalla */
+  --fondo-imagen: url("../Recursos Graficos/Fondomenu.png");
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-
-
-/* Toda la página */
 
 body {
-
-    min-height: 100vh;
-
-    font-family: Arial, sans-serif;
-
-    background-color: #35134f;
-
-    color: white;
-
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #120b24;
+  font-family: "Press Start 2P", monospace;
 }
 
+.pantalla {
+  position: relative;
+  width: min(96vw, 900px);
+  aspect-ratio: 4 / 3.4;
+  overflow: hidden;
+  border-radius: 14px;
+  box-shadow: 0 0 0 4px #1a1030, 0 20px 50px rgba(0, 0, 0, 0.55);
 
-/* =================================================
-   PANTALLA DE INICIO
-   ================================================= */
-
-.inicio {
-
-    min-height: 100vh;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 30px;
-
-    /*
-    Fondo provisorio.
-    Cuando tengamos el fondo definitivo
-    del prototipo lo colocamos acá.
-    */
-
-    background:
-        linear-gradient(
-            rgba(50, 15, 70, 0.45),
-            rgba(50, 15, 70, 0.45)
-        );
-
+  /* Fondo de respaldo hecho en CSS (cielo + nubes + montañas + bosque),
+     por si todavía no exportaste fondos.pdf a una imagen */
+  background:
+    var(--fondo-imagen),
+    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.12), transparent 40%),
+    linear-gradient(180deg, #7a5fb0 0%, #6650a0 30%, #4a3a80 55%, #2f2560 75%, #221a4a 100%);
+  background-size: cover, cover, cover;
+  background-position: center;
 }
 
-
-/* =================================================
-   LOGO
-   ================================================= */
-
-.logo {
-
-    text-align: center;
-
-    margin-bottom: 25px;
-
+/* Logo circular */
+.logo-wrap {
+  position: absolute;
+  top: 2%;
+  left: 2.5%;
+  width: 30%;
+  aspect-ratio: 1 / 1;
+  z-index: 3;
+  border-radius: 50%;
+  background: var(--morado-panel);
+  border: 2px solid var(--borde-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-
-.logo h1 {
-
-    font-size: 42px;
-
-    font-weight: 900;
-
-    color: #fff36b;
-
-    line-height: 0.9;
-
-    letter-spacing: 2px;
-
-    /*
-    Sombra para darle un estilo
-    más parecido a un videojuego.
-    */
-
-    text-shadow:
-        3px 3px 0 #35134f,
-        5px 5px 0 #1e0a2d;
-
+.logo-wrap::after {
+  /* Se ve solo si logo.png todavía no existe; la imagen lo tapa cuando carga */
+  content: "LOGO";
+  color: var(--amarillo-suave);
+  font-size: clamp(0.4rem, 1vw, 0.55rem);
 }
 
-
-/* =================================================
-   NOMBRE DEL JUGADOR
-   ================================================= */
-
-.nombre-jugador {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-bottom: 20px;
-
+.logo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
-.nombre-jugador label {
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    color: #fff36b;
-
+/* Título */
+.titulo {
+  position: absolute;
+  top: 34%;
+  left: 4%;
+  z-index: 3;
+  color: var(--amarillo);
+  font-size: clamp(1.4rem, 4.2vw, 2.4rem);
+  line-height: 1.25;
+  text-shadow: 3px 3px 0 #1a1030, -2px -2px 0 #1a1030, 2px -2px 0 #1a1030, -2px 2px 0 #1a1030;
+  letter-spacing: 1px;
 }
 
-
-.nombre-jugador input {
-
-    width: 300px;
-
-    height: 42px;
-
-    padding: 10px 15px;
-
-    border: none;
-
-    border-radius: 20px;
-
-    outline: none;
-
-    text-align: center;
-
-    font-size: 16px;
-
+/* Menú principal */
+.menu-principal {
+  position: absolute;
+  left: 4%;
+  bottom: 32%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  width: 42%;
 }
 
-
-/* =================================================
-   SELECCIÓN DE PERSONAJE
-   ================================================= */
-
-.seleccion-personaje {
-
-    text-align: center;
-
-    margin-bottom: 25px;
-
+.boton-menu {
+  font-family: inherit;
+  font-size: clamp(0.6rem, 1.3vw, 0.85rem);
+  color: var(--amarillo);
+  background: rgba(58, 40, 92, 0.85);
+  border: 2px solid var(--borde-panel);
+  border-radius: 10px;
+  padding: 0.9em 1.2em;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
-
-.seleccion-personaje p {
-
-    color: #fff36b;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-
+.boton-menu:hover,
+.boton-menu:focus-visible {
+  background: rgba(74, 49, 120, 0.95);
+  transform: translateX(4px);
+  outline: 2px solid var(--amarillo);
 }
 
-
-/* Contenedor de personajes */
-
-.personajes {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 8px;
-
+/* Panel derecho: nombre + selector + personaje */
+.panel-personaje {
+  position: absolute;
+  top: 11%;
+  right: 5%;
+  z-index: 3;
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3%;
 }
 
-
-/* Botones de personajes */
-
-.personaje {
-
-    width: 42px;
-
-    height: 32px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background-color: white;
-
-    color: #35134f;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-
+.input-nombre {
+  font-family: inherit;
+  font-size: clamp(0.5rem, 1.15vw, 0.75rem);
+  color: var(--amarillo);
+  background: rgba(58, 40, 92, 0.85);
+  border: 2px solid var(--borde-panel);
+  border-radius: 8px;
+  padding: 0.6em 0.8em;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 0 #1a1030;
 }
 
-
-/* Personaje seleccionado */
-
-.personaje.seleccionado {
-
-    background-color: #fff36b;
-
-    transform: scale(1.1);
-
+.input-nombre::placeholder {
+  color: var(--amarillo);
+  opacity: 0.85;
 }
 
-
-/* Efecto al pasar el mouse */
-
-.personaje:hover {
-
-    transform: scale(1.1);
-
+.input-nombre:focus {
+  outline: 2px solid var(--amarillo);
+  background: rgba(74, 49, 120, 0.95);
 }
 
-
-/* =================================================
-   MENÚ PRINCIPAL
-   ================================================= */
-
-.menu {
-
-    width: 260px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 14px;
-
+.selector-numeros {
+  display: flex;
+  gap: 6px;
 }
 
-
-/* Botones principales */
-
-.boton {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    width: 100%;
-
-    height: 48px;
-
-    background-color: #35005d;
-
-    border: 2px solid #5b1c82;
-
-    border-radius: 25px;
-
-    color: #fff36b;
-
-    text-decoration: none;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    transition: 0.2s;
-
+.num-btn {
+  font-family: inherit;
+  font-size: clamp(0.55rem, 1.2vw, 0.75rem);
+  width: clamp(22px, 3.4vw, 34px);
+  height: clamp(22px, 3.4vw, 34px);
+  border-radius: 50%;
+  border: 2px solid var(--borde-panel);
+  background: var(--amarillo);
+  color: var(--morado-oscuro);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.12s ease, transform 0.12s ease;
 }
 
-
-/* Efecto al pasar el mouse */
-
-.boton:hover {
-
-    background-color: #4d0878;
-
-    transform: scale(1.05);
-
+.num-btn:hover,
+.num-btn:focus-visible {
+  transform: scale(1.08);
 }
 
+.num-btn--activo {
+  background: var(--amarillo-suave);
+  border-color: var(--amarillo);
+}
 
-/* =================================================
-   ADAPTACIÓN PARA CELULARES
-   ================================================= */
+.marco-personaje {
+  width: 100%;
+  aspect-ratio: 1 / 1.05;
+  background: var(--morado-panel);
+  border: 2px solid var(--borde-panel);
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.35);
+  padding-top: 4%;
+}
 
-@media (max-width: 600px) {
+.personaje-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  image-rendering: pixelated;
+  transform: scale(1.65);
+  transform-origin: bottom center;
+}
 
-    .logo h1 {
+/* Responsive: apilar en pantallas muy angostas */
+@media (max-width: 480px) {
+  .pantalla {
+    aspect-ratio: 3 / 4;
+  }
 
-        font-size: 34px;
+  .titulo {
+    top: 20%;
+    font-size: clamp(1.1rem, 6vw, 1.6rem);
+  }
 
-    }
+  .menu-principal {
+    width: 55%;
+    bottom: 4%;
+  }
 
-
-    .nombre-jugador input {
-
-        width: 250px;
-
-    }
-
-
-    .menu {
-
-        width: 230px;
-
-    }
-
+  .panel-personaje {
+    width: 55%;
+  }
 }

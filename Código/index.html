@@ -1,149 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-    <!-- Permite utilizar tildes, ñ y otros caracteres -->
-    <meta charset="UTF-8">
-
-    <!-- Hace que la página se adapte a celulares y computadoras -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Nombre que aparece en la pestaña -->
-    <title>Poke-Naturales</title>
-
-    <!-- Conectamos este HTML con el archivo CSS -->
-    <link rel="stylesheet" href="estilos.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poke-Naturales</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
-
-
 <body>
 
-    <!-- ==========================================
-         PANTALLA PRINCIPAL
-         ========================================== -->
+  <main class="pantalla" id="pantalla-inicio">
 
-    <main class="inicio">
+    <!-- Logo circular arriba a la izquierda -->
+    <div class="logo-wrap">
+      <img src="../Recursos Graficos/logopokenaturales.png" alt="Logo Ciencias Naturales" class="logo-img"
+           onerror="this.style.display='none'" />
+    </div>
 
+    <!-- Título del juego -->
+    <h1 class="titulo">POKE-<br />NATURALES</h1>
 
-        <!-- ======================================
-             LOGO / NOMBRE DEL JUEGO
-             ====================================== -->
+    <!-- Menú principal -->
+    <nav class="menu-principal">
+      <button type="button" class="boton-menu">Modo Alumno</button>
+      <button type="button" class="boton-menu">Modo Docente</button>
+      <button type="button" class="boton-menu">Ajustes</button>
+    </nav>
 
-        <section class="logo">
+    <!-- Panel de nombre y selección de personaje -->
+    <div class="panel-personaje">
 
-            <h1>POKE-</h1>
-            <h1>NATURALES</h1>
+      <input type="text" class="input-nombre" placeholder="Nombre y Apellido" maxlength="30" />
 
-        </section>
+      <div class="selector-numeros">
+        <button type="button" class="num-btn">1</button>
+        <button type="button" class="num-btn">2</button>
+        <button type="button" class="num-btn">3</button>
+        <button type="button" class="num-btn">4</button>
+        <button type="button" class="num-btn num-btn--activo">5</button>
+      </div>
 
+      <div class="marco-personaje">
+        <img src="../Recursos Graficos/Pj.png" alt="Personaje seleccionado" class="personaje-img" />
+      </div>
 
-        <!-- ======================================
-             NOMBRE DEL JUGADOR
-             ====================================== -->
+    </div>
 
-        <section class="nombre-jugador">
-
-            <label for="nombre">
-                Nombre y Apellido
-            </label>
-
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Nombre y Apellido"
-            >
-
-        </section>
-
-
-        <!-- ======================================
-             ELECCIÓN DEL PERSONAJE
-             ====================================== -->
-
-        <section class="seleccion-personaje">
-
-            <p>
-                Elegí tu personaje
-            </p>
-
-
-            <div class="personajes">
-
-                <!-- Personaje 1 -->
-                <button class="personaje seleccionado">
-                    1
-                </button>
-
-
-                <!-- Personaje 2 -->
-                <button class="personaje">
-                    2
-                </button>
-
-
-                <!-- Personaje 3 -->
-                <button class="personaje">
-                    3
-                </button>
-
-
-                <!-- Personaje 4 -->
-                <button class="personaje">
-                    4
-                </button>
-
-
-                <!-- Personaje 5 -->
-                <button class="personaje">
-                    5
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- ======================================
-             MENÚ PRINCIPAL
-             ====================================== -->
-
-        <nav class="menu">
-
-
-            <!-- ================================
-                 MODO ALUMNO
-                 ================================ -->
-
-            <a href="#" class="boton">
-                Modo Alumno
-            </a>
-
-
-            <!-- ================================
-                 MODO DOCENTE
-                 ================================ -->
-
-            <a href="#" class="boton">
-                Modo Docente
-            </a>
-
-
-            <!-- ================================
-                 AJUSTES
-                 ================================ -->
-
-            <a href="#" class="boton">
-                Ajustes
-            </a>
-
-
-        </nav>
-
-
-    </main>
+  </main>
 
 </body>
-
 </html>
