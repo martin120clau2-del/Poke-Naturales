@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Poke-Naturales. El código está separado en módulos, en la carpeta "js".
+     Las imágenes y la tipografía van adentro de js/imagenes.js y js/fuente.js,
+     así que no hace falta ninguna otra carpeta: se abre y anda. -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Poke-Naturales</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+  <div id="loading">Cargando escena...</div>
+  <canvas id="game" width="960" height="640"></canvas>
+  <div id="fade"></div>
+  <div id="hud">
+    <div><b>Lugar:</b> <span id="lugar">Exterior</span></div>
+    <div><b>Mover:</b> WASD / Flechas</div>
+    <div><b>Correr:</b> Shift</div>
+    <div><b>Hablar:</b> E</div>
+    <div id="hint" class="hint"></div>
+  </div>
+  <button id="debugBtn">Mostrar colisiones</button>
+</div>
+
+<!-- ===== Datos (no hace falta tocarlos seguido) ===== -->
+<script src="js/imagenes.js"></script>
+<script src="js/fuente.js"></script>
+
+<!-- ===== Lo que vas a querer editar ===== -->
+<script src="js/preguntas.js"></script>
+
+<!-- ===== Los mapas, con sus colisiones y personajes ===== -->
+<script src="js/nucleo.js"></script>
+<script src="js/escena-exterior.js"></script>
+<script src="js/escena-piso1.js"></script>
+<script src="js/escena-piso2.js"></script>
+
+<!-- ===== Cómo funciona el juego ===== -->
+<script src="js/jugador.js"></script>
+<script src="js/npcs.js"></script>
+<script src="js/transiciones.js"></script>
+<script src="js/dialogos.js"></script>
+<script src="js/cuestionario.js"></script>
+<script src="js/victoria.js"></script>
+<script src="js/dibujo.js"></script>
+<script src="js/entradas.js"></script>
+<script src="js/carga.js"></script>
+<script src="js/bucle.js"></script>
+
+<!-- ===== Arranque (siempre último) ===== -->
+<script src="js/inicio.js"></script>
+</body>
+</html>
